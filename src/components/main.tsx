@@ -20,7 +20,7 @@ export default function BilibiliDownloader() {
     setLoading(true);
 
     try {
-      const response = await fetch(`http://52.62.131.56:3000/download?url=${encodeURIComponent(url)}`);
+      const response = await fetch(`https://server.huytehuy.id.vn/download?url=${encodeURIComponent(url)}`);
       
       if (!response.ok) {
         const error = await response.json();
@@ -29,7 +29,7 @@ export default function BilibiliDownloader() {
 
       // Tạo một thẻ a ẩn để tải xuống
       const link = document.createElement('a');
-      link.href = `http://52.62.131.56:3000/download?url=${encodeURIComponent(url)}`;
+      link.href = `https://server.huytehuy.id.vn/download?url=${encodeURIComponent(url)}`;
       link.download = 'video.mp4';
       document.body.appendChild(link);
       link.click();
